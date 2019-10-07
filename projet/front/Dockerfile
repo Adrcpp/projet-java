@@ -1,0 +1,14 @@
+FROM node:alpine
+
+RUN mkdir -p /app
+
+WORKDIR /app
+
+COPY ./app/package.json /app/
+
+RUN ["npm", "install"]
+
+COPY ./app/. /app
+
+EXPOSE 4200/tcp
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--poll", "500"]

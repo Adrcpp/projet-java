@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  
+  <persistence-unit name="PersistencePU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.persistence.dao.entities.User</class>
+    <class>com.persistence.dao.entities.Role</class>
+    <class>com.persistence.dao.entities.Marker</class>
+    <properties>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+        <property name="url" value="jdbc:mysql://mysql:3306/projet-libre?useSSL=false" /> 
+        <property name="username" value="application" />  
+        <property name="password" value="passw0rd" /> 
+    </properties>
+  </persistence-unit>
+
+  <persistence-unit name="TestPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.persistence.dao.entities.User</class>
+    <class>com.persistence.dao.entities.Role</class>
+    <class>com.persistence.dao.entities.Marker</class>
+    <properties>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+        <property name="url" value="jdbc:mysql://172.17.0.2:3306/projet-libre_test?useSSL=false"/>
+        <property name="username" value="application" />  
+        <property name="password" value="passw0rd" /> 
+    </properties>
+  </persistence-unit>
+
+</persistence>

@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  tomcat:
+    environment:
+      - TZ=Europe/Paris
+    build:
+      context: ./rest-api/
+      dockerfile: Dockerfile
+    image: tomcat
+    ports:
+      - 8080:8080
+
+  mysql:
+      build:
+        context: ./dao-service/
+        dockerfile: Dockerfile
+      image: mysql
+
+  front:
+      build:
+        context: ./front/
+        dockerfile: Dockerfile
+      image: angular-front
+      ports:
+        - 80:4200
+      volumes:
+        - ./front/app/src:/app/src 

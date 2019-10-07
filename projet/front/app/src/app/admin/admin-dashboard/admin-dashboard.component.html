@@ -1,0 +1,21 @@
+<h2>Users</h2>
+<table>
+    <tr>
+      <th>idUser</th>
+      <th>username</th>
+      <th>dateCreation</th>
+      <th>Edit</th>
+    </tr>
+
+    <tr *ngFor="let user of data; let i=index;">
+        <td> {{ user.idUser }} </td>
+        <td> {{ user.username }} </td>
+        <td> {{ user.dateCreation }} </td>
+        <td>
+            <button class="btn btn-danger" title="delete user" (click)="delete(user.idUser)">Delete </button>
+            <button class="btn btn-info"   title="edit user"   (click)="edit(user.idUser)">Edit</button>
+        </td>
+    </tr>
+
+</table>
+

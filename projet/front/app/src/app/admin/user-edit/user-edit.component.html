@@ -1,0 +1,27 @@
+<div class="pt-4 col-sm-4 offset-sm-4">
+    <h3>Login</h3>
+    <form class="form-group" [formGroup]="userEdit">
+        <div class="form-group">
+            <label for="user">
+                Username:
+            </label>
+            <input id="user" (ngModel)="username" [value]="username" class="form-control" type="text"
+                formControlName="username">
+        </div>
+
+        <div class="form-group">.
+
+            <label for="roles">
+                Role:
+            </label>
+            <select required="true" id="roles" class="form-control" (ngModel)="roles" formControlName="roles">
+                <option *ngFor="let role of roles; let i = index" [value]="i">
+                    {{ role.name }}
+                </option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" (click)="onSubmit()"> Save </button>
+
+    </form>
+</div>
